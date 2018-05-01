@@ -46,4 +46,4 @@ app.get('/vote', (req, res, next) => {
     return res.send(result);
 })
 
-app.listen(process.env.PORT | 8050);
+app.listen(process.env.PORT || 8050);
