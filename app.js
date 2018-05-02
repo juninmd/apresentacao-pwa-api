@@ -46,4 +46,11 @@ app.get('/vote', (req, res, next) => {
     return res.send(result);
 })
 
+app.get('/reset', (req, res, next) => {
+    if (fs.existsSync('vote.txt')) {
+        fs.unlinkSync('vote.txt');
+    }
+    return res.send({ status: 'ok' });
+})
+
 app.listen(process.env.PORT || 8050);
